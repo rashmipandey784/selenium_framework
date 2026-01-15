@@ -3,23 +3,35 @@ pipeline {
 
     stages {
 
-        stage('build') {
+        stage('Checkout') {
             steps {
-                echo "executing build"
+                git 'https://github.com/rashmipandey784/selenium_framework.git'
             }
         }
 
-        stage('test') {
+        stage('Verify Python') {
             steps {
-                echo "executing test"
+                bat '"C:\\Program Files\\python.exe" --version'
             }
         }
 
-        stage('deploy') {
+        stage('Install Dependencies') {
             steps {
-                echo "deployed"
+                bat '"C:\\Program Files\\python.exe" -m pip install -r requirement.txt'
             }
         }
 
+        stage('Run Tests') {
+            steps {
+                bat '"C:\\Program Files\\python.exe" -m pytest -v -s'
+            }
+        }
+    }
+
+    post {
+        always {
+            echo 'Pipeline finished'
+        }
     }
 }
+
