@@ -30,7 +30,9 @@ def test_e_e(browser_Instance):
     al.display_alert()
     dd=Window_handle(driver)
     dd.Drop_and_down()
-    sleep(10)
+
+
+
 
 
 

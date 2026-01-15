@@ -18,6 +18,7 @@ class Window_alert(Browser_Util):
         sleep(5)
         alert_btn.accept()
         #self.driver.switch_to.window(window[1])
+        self.driver.switch_to.new_window(WindowTypes.TAB)
 
 
 

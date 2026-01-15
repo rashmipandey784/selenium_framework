@@ -25,7 +25,6 @@ def browser_Instance(request):
     driver.get("https://rahulshettyacademy.com/loginpagePractise/")
     #driver.switch_to.new_window(WindowTypes.WINDOW)
     #driver.get("https://testautomationpractice.blogspot.com/")
-    sleep(10)
     yield driver
     driver.quit()
 
