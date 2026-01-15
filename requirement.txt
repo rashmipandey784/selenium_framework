@@ -1,0 +1,5 @@
+python
+request
+selenium
+pytest
+seleniumLibrary
